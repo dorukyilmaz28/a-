@@ -90,8 +90,8 @@ body {
 }
 
 .heart {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 28px;
     position: relative;
     transform: rotate(-45deg);
     animation: heartbeat 2s ease-in-out infinite;
@@ -100,22 +100,22 @@ body {
 .heart::before,
 .heart::after {
     content: '';
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     position: absolute;
-    left: 15px;
-    top: 0;
     background: var(--brown-cream);
-    border-radius: 30px 30px 0 0;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
+    border-radius: 50%;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.heart::before {
+    left: 16px;
+    top: 0;
 }
 
 .heart::after {
     left: 0;
-    transform: rotate(45deg);
-    transform-origin: 100% 100%;
+    top: 0;
 }
 
 /* ============================================
@@ -179,6 +179,27 @@ body {
     background: rgba(255, 255, 255, 0.5);
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.message-image {
+    max-width: 800px;
+}
+
+.message-photo {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.message-photo:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* ============================================
@@ -251,18 +272,28 @@ body {
 }
 
 .final-heart .heart {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 38px;
     animation: heartbeat 2s ease-in-out infinite;
 }
 
 .final-heart .heart::before,
 .final-heart .heart::after {
-    width: 40px;
-    height: 40px;
-    left: 20px;
+    width: 42px;
+    height: 42px;
     background: var(--brown-dark);
+    border-radius: 50%;
     box-shadow: 0 0 15px rgba(139, 90, 43, 0.4);
+}
+
+.final-heart .heart::before {
+    left: 21px;
+    top: 0;
+}
+
+.final-heart .heart::after {
+    left: 0;
+    top: 0;
 }
 
 .final-text {

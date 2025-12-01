@@ -9,7 +9,7 @@ let touchStartY = 0;
 
 // Handle touch/mouse movement to shift gradient
 function handleInteraction(e) {
-    if (!hero || !interactive) return;
+    if (!hero) return;
     
     let clientX, clientY;
     
@@ -28,9 +28,6 @@ function handleInteraction(e) {
     
     // Update gradient position for hero section
     hero.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
-    
-    // Update gradient position for interactive section
-    interactive.style.backgroundPosition = `${100 - xPercent}% ${100 - yPercent}%`;
 }
 
 // ============================================
@@ -102,7 +99,7 @@ function throttle(func, limit) {
 const throttledHandleInteraction = throttle(handleInteraction, 16); // ~60fps
 
 function initInteractionEvents() {
-    if (!hero || !interactive) return;
+    if (!hero) return;
     
     // Add event listeners for touch and mouse
     if ('ontouchstart' in window) {
@@ -128,7 +125,6 @@ function initInteractionEvents() {
 document.addEventListener('DOMContentLoaded', () => {
     // Get elements
     hero = document.getElementById('hero');
-    interactive = document.getElementById('interactive');
     
     // Initialize all features
     initInteractionEvents();

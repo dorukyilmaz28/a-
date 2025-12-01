@@ -134,15 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initInteractionEvents();
     initScrollAnimations();
     
-    // Add a small delay to ensure CSS is loaded
-    setTimeout(() => {
-        const heroTitle = document.querySelector('.hero-title');
-        const heroSubtitle = document.querySelector('.hero-subtitle');
-        const heartContainer = document.querySelector('.heart-container');
-        
-        if (heroTitle) heroTitle.style.opacity = '1';
-        if (heroSubtitle) heroSubtitle.style.opacity = '1';
-        if (heartContainer) heartContainer.style.opacity = '1';
-    }, 100);
+    // Ensure elements are visible (CSS animations will handle the rest)
+    // No need to manually set opacity as CSS animations handle it
 });
 
